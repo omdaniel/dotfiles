@@ -1,0 +1,4 @@
+let $CONFPATH='~/.vim/configurations/css'
+source ~/.vim/configurations/default/default.vim
+source ~/.vim/configurations/code/code.vim
+source ~/.vim/configurations/css/css.vim

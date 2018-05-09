@@ -26,6 +26,15 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+
+# If not running interactively, don't do anything
+
+[ -z "$PS1" ] && return
+
 source /home/ubuntu/.local/share/canopy/edm/envs/User/bin/activate
 
-echo blah
+for DOTFILE in "$HOME"/dotfiles/system/{function,env,alias}; do
+
+  [ -f "$DOTFILE" ] && . "$DOTFILE"
+
+done
