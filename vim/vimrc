@@ -1,3 +1,489 @@
 so /usr/share/vim/vim80/defaults.vim
 
 color seoul256
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vim abidibo configuration
+"
+" This is a default configuration file sourced by all other specific
+" configurations, included the default one
+"
+" vim-plug operates inside $VIMDIRPATH defined here, but plugins are
+" loaded inside plugins.vim files defined by the active configuration
+" All configutations source the default plugins.vim file, which is
+" intended as a common plugin list
+"
+" A vimrc representing a new configuration must:
+" - define a $CONFPATH variable which is the root directory
+"   containing the conf vimrc and plugins file
+" - source this file
+" - add plugins and their configurations inside the plugins file
+" - add extra configurations
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let $VIMDIRPATH = '~/.vim'
+
+""""""""""""""""""""""""""""""
+" => Leader
+""""""""""""""""""""""""""""""
+let mapleader = ','
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => General
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Set to auto read when a file is changed from the outside
+set autoread
+
+" Use awesome features
+set nocompatible " be iMproved
+
+" create missing dirs
+nnoremap <leader>md :!mkdir -p %:p:h<cr>
+
+" good habits
+" Disable Arrow keys in Escape mode
+" map <up> <nop>
+" map <down> <nop>
+" map <left> <nop>
+" map <right> <nop>
+
+" " Disable Arrow keys in Insert mode
+" imap <up> <nop>
+" imap <down> <nop>
+" imap <left> <nop>
+" imap <right> <nop>
+
+" jk is escape
+inoremap jk <esc>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => History
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Sets how many lines of history VIM has to remember
+set history=700
+
+" persistent undo
+silent !mkdir ~/.vim/backups > /dev/null 2>&1
+set undodir=~/.vim/backups
+set undofile
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Net
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" ftp
+let g:netrw_ftp_cmd="ftp -p"
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => User Interface
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" enable mouse
+set mouse=a
+set ttymouse=sgr
+
+" highlight cursor line
+set cursorline
+
+" show commands
+" set showcmd
+set noshowmode
+
+" GUI Font
+set guifont=Source\ Code\ Pro\ for\ Powerline\ Light\ 10
+
+" Set 7 lines to the cursor - when moving vertically using j/k
+set so=7
+
+" Turn on the Wild menu
+set wildmenu
+
+" Always show current position
+set ruler
+
+" Configure backspace so it acts as it should act
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
+
+" Ignore case when searching
+set ignorecase
+
+" When searching try to be smart about cases 
+set smartcase
+
+" Highlight search results
+set hlsearch
+
+" Makes search act like search in modern browsers
+set incsearch
+
+" Don't redraw while executing macros (good performance config)
+set lazyredraw
+
+" For regular expressions turn magic on
+set magic
+
+" Show matching brackets when text indicator is over them
+set showmatch
+
+" How many tenths of a second to blink when matching brackets
+set mat=2
+
+" No annoying sound on errors
+"set noerrorbells
+"set novisualbell
+set noeb vb t_vb=
+set t_vb=
+set tm=500
+
+" remap resize split windows ctrls
+noremap <c-w><left> <c-w><
+noremap <c-w><right> <c-w>>
+
+" buffer move
+nnoremap <leader>bl :bnext<cr>
+nnoremap <leader>bh :bprev<cr>
+
+" specific code configurations
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => File types and Completion
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
+" Enable omnicomplete for supported filetypes
+autocmd FileType css,scss setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=tern#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" set line numbers
+set number
+
+" wildignore
+set wildmode=list:longest
+set wildmenu "enable ctrl-n and ctrl-p to scroll thru matches
+set wildignore=*.o,*.obj,*.pyc,*~ "stuff to ignore when tab completing
+set wildignore+=*vim/backups*
+set wildignore+=*sass-cache*
+set wildignore+=*DS_Store*
+set wildignore+=vendor/**
+set wildignore+=vendor/**
+set wildignore+=*.gem
+set wildignore+=*.png,*.jpg,*.gif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Text, tab and indent related
+"    These are common values, overwritten in project specific
+"    vimrc
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Use spaces instead of tabs
+set expandtab
+
+" Be smart when using tabs ;)
+set smarttab
+
+" 1 tab == 4 spaces
+set shiftwidth=4
+set tabstop=4
+
+" Linebreak on 500 characters
+set lbr
+set tw=500
+
+set ai "Auto indent
+set si "Smart indent
+set wrap "Wrap lines
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Operation mapping
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+:onoremap p i(
+:onoremap in( :<c-u>normal! f(vi(<cr>
+:onoremap in' :<c-u>normal! f'vi'<cr>
+:onoremap in" :<c-u>normal! f"vi"<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Folding
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set foldmethod=syntax
+set foldlevelstart=1
+
+" expanded when opening a file
+au BufRead * normal zR
+
+let javaScript_fold=1         " JavaScript
+let php_folding=1             " PHP
+let sh_fold_enabled=1         " sh
+let vimsyn_folding='af'       " Vim script
+let xml_syntax_folding=1      " XML
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Python
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+noremap <leader>b Oimport pdb; pdb.set_trace() # BREAKPOINT<esc>
+
+
+set foldlevelstart=0
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Highlight PEP8
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd FileType python setlocal colorcolumn=80
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Colors and Fonts
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+" Set utf8 as standard encoding and en_US as the standard language
+set encoding=utf-8
+
+" Use Unix as the standard file type
+set ffs=unix,dos,mac
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Files, backups and undo
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Turn backup off, since most stuff is in SVN, git et.c anyway...
+set nobackup
+set nowb
+set noswapfile
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Text, tab and indent related
+"    These are common values, overwritten in project specific
+"    vimrc
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Display tabs and trailing spaces visually
+set list listchars=tab:\ \ ,trail:·
+
+""""""""""""""""""""""""""""""
+" => Visual mode related
+""""""""""""""""""""""""""""""
+" Visual mode pressing * or # searches for the current selection
+" Super useful! From an idea by Michael Naumann
+vnoremap <silent> * :call VisualSelection('f')<CR>
+vnoremap <silent> # :call VisualSelection('b')<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Misc
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Remove the Windows ^M - when the encodings gets messed up
+noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
+
+" Quickly open a buffer for scripbble
+map <leader>q :e ~/buffer<cr>
+
+" Toggle paste mode on and off
+map <leader>pp :setlocal paste!<cr>
+
+" split
+nnoremap <space>h <c-w>h
+nnoremap <space>l <c-w>l
+nnoremap <space>j <c-w>j
+nnoremap <space>k <c-w>k
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Helper functions
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! CmdLine(str)
+    exe "menu Foo.Bar :" . a:str
+    emenu Foo.Bar
+    unmenu Foo
+endfunction
+
+function! VisualSelection(direction) range
+    let l:saved_reg = @"
+    execute "normal! vgvy"
+
+    let l:pattern = escape(@", '\\/.*$^~[]')
+    let l:pattern = substitute(l:pattern, "\n$", "", "")
+
+    if a:direction == 'b'
+        execute "normal ?" . l:pattern . "^M"
+    elseif a:direction == 'gv'
+        call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.')
+    elseif a:direction == 'replace'
+        call CmdLine("%s" . '/'. l:pattern . '/')
+    elseif a:direction == 'f'
+        execute "normal /" . l:pattern . "^M"
+    endif
+
+    let @/ = l:pattern
+    let @" = l:saved_reg
+endfunction
+
+" Returns true if paste mode is enabled
+function! HasPaste()
+    if &paste
+        return 'PASTE MODE  '
+    en
+    return ''
+endfunction
+
+" Don't close window, when deleting a buffer
+command! Bclose call <SID>BufcloseCloseIt()
+function! <SID>BufcloseCloseIt()
+   let l:currentBufNum = bufnr("%")
+   let l:alternateBufNum = bufnr("#")
+
+   if buflisted(l:alternateBufNum)
+     buffer #
+   else
+     bnext
+   endif
+
+   if bufnr("%") == l:currentBufNum
+     new
+   endif
+
+   if buflisted(l:currentBufNum)
+     execute("bdelete! ".l:currentBufNum)
+   endif
+endfunction
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-airline
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"set laststatus=2
+
+let g:airline_theme='wombat'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 0
+let g:airline_theme = 'wombat'
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+
+
+
+" g:airline#extensions#default#layout = [
+"      \ [ 'a', 'b', 'c' ],
+"      \ [ 'x', 'y', 'z', 'error', 'warning' ]
+"      \ ]
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => nerdtree
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <C-f> :NERDTreeToggle<CR>
+let NERDTreeIgnore = ['\.pyc$']
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => fzf
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:fzf_launcher='gnome-terminal --disable-factory -x bash -ic %s'
+let $FZF_DEFAULT_COMMAND = 'ag -l'
+let g:fzf_height='40%'
+map <space>f :Files<CR>
+map <space>b :Buffers<CR>
+map <space>g :GitFiles<CR>
+map <space>c :Commits<CR>
+map <space>t :Tags<CR>
+map <space>/ :Ag<space>
+imap <c-x><c-l> <plug>(fzf-complete-line)
+imap <C-x><C-f> <plug>(fzf-complete-file-ag)
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => YankRing
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <space>y :YRShow<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Gundo
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" toggle gundo
+nnoremap <leader>u :GundoToggle<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => EasyAlign
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Completor
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" the below rules where commented out because of supertab
+"inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+"inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" swith the following lines to autocomplete python 2/3
+" let g:completor_python_binary = '/usr/bin/python2.7'
+let g:completor_python_binary = '/usr/bin/python3.5'
+let g:completor_filetype_map = {'python.django': 'python'}
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Supertab
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Utilsnip
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsExpandTrigger="<nop>"
+let g:ulti_expand_or_jump_res = 0
+function! <SID>ExpandSnippetOrReturn()
+  let snippet = UltiSnips#ExpandSnippetOrJump()
+  if g:ulti_expand_or_jump_res > 0
+    return snippet
+  else
+    return "\<CR>"
+  endif
+endfunction
+inoremap <expr> <CR> pumvisible() ? "<C-R>=<SID>ExpandSnippetOrReturn()<CR>" : "\<CR>"
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => ALE
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:airline#extensions#ale#enabled = 1
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_javascript_flow_use_global = 1
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+" Prettier does not have spaceBeforeFunctionParen option => fix with eslint after
+" https://github.com/prettier/prettier/issues/1139
+let g:ale_fixers = {'javascript': ['prettier', 'eslint'], 'scss': ['prettier'], 'python': ['yapf', 'isort']}
+" create a .prettierrc file in the project root
+" {
+"   'semi':false,
+"   'singleQuote':true,
+"   'bracketSpacing':true
+" }
+let g:ale_javascript_prettier_use_local_config = 1
+let g:ale_linters = {
+\   'scss': ['sasslint'],
+\}
+let g:ale_set_highlights = 1
+let g:ale_set_signs = 1
+let g:ale_sign_column_always = 1
+" let g:ale_sign_error = '✖'
+" let g:ale_sign_warning = '⚠'
+nnoremap <leader>f :ALEFix<cr>
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => semantic-highlight
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+:nnoremap <Leader>s :SemanticHighlightToggle<cr>
+let g:semanticTermColors = [28,1,2,3,4,5,6,7,25,9,10,34,12,13,14,15,16,125,124,19]
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => tagbar
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <F8> :TagbarToggle<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-devicons
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set guifont=RobotoMono\ Nerd\ Font\ Mono\ 11
+
+
