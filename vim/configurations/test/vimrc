@@ -1,2 +1,0 @@
-let $CONFPATH='~/.vim/configurations/test'
-source ~/.vim/configurations/default/default.vim

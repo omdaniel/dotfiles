@@ -1,7 +1,0 @@
-let $CONFPATH='~/.vim/configurations/django'
-source ~/.vim/configurations/default/default.vim
-source ~/.vim/configurations/code/code.vim
-source ~/.vim/configurations/css/css.vim
-source ~/.vim/configurations/html/html.vim
-source ~/.vim/configurations/python/python.vim
-source ~/.vim/configurations/django/django.vim

@@ -1,3 +1,0 @@
-let $CONFPATH='~/.vim/configurations/js'
-source ~/.vim/configurations/default/default.vim
-source ~/.vim/configurations/code/code.vim
