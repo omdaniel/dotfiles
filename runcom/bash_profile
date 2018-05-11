@@ -33,7 +33,7 @@ fi
 
 source /home/ubuntu/.local/share/canopy/edm/envs/User/bin/activate
 
-for DOTFILE in "$HOME"/dotfiles/system/{function,env,alias}; do
+for DOTFILE in "$HOME"/dotfiles/system/{functions.sh,env.sh,alias.sh}; do
 
   [ -f "$DOTFILE" ] && . "$DOTFILE"
 
