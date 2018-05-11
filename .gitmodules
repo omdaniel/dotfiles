@@ -1,0 +1,117 @@
+[submodule "vim/pack/default/start/vim-addon-local-vimrc"]
+	path = vim/pack/default/start/vim-addon-local-vimrc
+	url = https://github.com/MarcWeber/vim-addon-local-vimrc
+[submodule "vim/pack/default/start/vim-easymotion"]
+	path = vim/pack/default/start/vim-easymotion
+	url = https://github.com/easymotion/vim-easymotion
+[submodule "vim/pack/default/start/vim-airline"]
+	path = vim/pack/default/start/vim-airline
+	url = https://github.com/vim-airline/vim-airline
+[submodule "vim/pack/default/start/vim-airline-themes"]
+	path = vim/pack/default/start/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes
+[submodule "vim/pack/default/start/nerdtree"]
+	path = vim/pack/default/start/nerdtree
+	url = https://github.com/scrooloose/nerdtree
+[submodule "vim/pack/default/start/nerdtree-git-plugin"]
+	path = vim/pack/default/start/nerdtree-git-plugin
+	url = https://github.com/Xuyuanp/nerdtree-git-plugin
+[submodule "vim/pack/default/start/vim-fugitive"]
+	path = vim/pack/default/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule "vim/pack/default/start/gitv"]
+	path = vim/pack/default/start/gitv
+	url = https://github.com/gregsexton/gitv
+[submodule "vim/pack/default/start/vim-git-log"]
+	path = vim/pack/default/start/vim-git-log
+	url = https://github.com/kablamo/vim-git-log
+[submodule "vim/pack/default/start/fzf.vim"]
+	path = vim/pack/default/start/fzf.vim
+	url = https://github.com/junegunn/fzf.vim
+[submodule "vim/pack/default/start/YankRing.vim"]
+	path = vim/pack/default/start/YankRing.vim
+	url = https://github.com/vim-scripts/YankRing.vim
+[submodule "vim/pack/default/start/gundo.vim"]
+	path = vim/pack/default/start/gundo.vim
+	url = https://github.com/sjl/gundo.vim
+[submodule "vim/pack/default/start/vim-abolish"]
+	path = vim/pack/default/start/vim-abolish
+	url = https://github.com/tpope/vim-abolish
+[submodule "vim/pack/default/start/webapi-vim"]
+	path = vim/pack/default/start/webapi-vim
+	url = https://github.com/mattn/webapi-vim
+[submodule "vim/pack/default/start/gist-vim"]
+	path = vim/pack/default/start/gist-vim
+	url = https://github.com/mattn/gist-vim
+[submodule "vim/pack/default/start/vim-multiple-cursors"]
+	path = vim/pack/default/start/vim-multiple-cursors
+	url = https://github.com/terryma/vim-multiple-cursors
+[submodule "vim/pack/default/start/asyncrun.vim"]
+	path = vim/pack/default/start/asyncrun.vim
+	url = https://github.com/skywind3000/asyncrun.vim
+[submodule "vim/pack/default/start/vim-easy-align"]
+	path = vim/pack/default/start/vim-easy-align
+	url = https://github.com/junegunn/vim-easy-align
+[submodule "vim/pack/default/start/indentLine"]
+	path = vim/pack/default/start/indentLine
+	url = https://github.com/Yggdroot/indentLine
+[submodule "vim/pack/default/start/FastFold"]
+	path = vim/pack/default/start/FastFold
+	url = https://github.com/Konfekt/FastFold
+[submodule "vim/pack/default/start/auto-pairs"]
+	path = vim/pack/default/start/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs
+[submodule "vim/pack/default/start/vim-commentary"]
+	path = vim/pack/default/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary
+[submodule "vim/pack/default/start/matchit"]
+	path = vim/pack/default/start/matchit
+	url = https://github.com/tmhedberg/matchit
+[submodule "vim/pack/default/start/vim-surround"]
+	path = vim/pack/default/start/vim-surround
+	url = https://github.com/tpope/vim-surround
+[submodule "vim/pack/default/start/ale"]
+	path = vim/pack/default/start/ale
+	url = https://github.com/w0rp/ale
+[submodule "vim/pack/default/start/completor.vim"]
+	path = vim/pack/default/start/completor.vim
+	url = https://github.com/maralla/completor.vim
+[submodule "vim/pack/default/start/ultisnips"]
+	path = vim/pack/default/start/ultisnips
+	url = https://github.com/SirVer/ultisnips
+[submodule "vim/pack/default/start/vim-snippets"]
+	path = vim/pack/default/start/vim-snippets
+	url = https://github.com/honza/vim-snippets
+[submodule "vim/pack/default/start/supertab"]
+	path = vim/pack/default/start/supertab
+	url = https://github.com/ervandew/supertab
+[submodule "vim/pack/default/start/vdebug"]
+	path = vim/pack/default/start/vdebug
+	url = https://github.com/joonty/vdebug
+[submodule "vim/pack/default/start/semantic-highlight.vim"]
+	path = vim/pack/default/start/semantic-highlight.vim
+	url = https://github.com/jaxbot/semantic-highlight.vim
+[submodule "vim/pack/default/start/tagbar"]
+	path = vim/pack/default/start/tagbar
+	url = https://github.com/majutsushi/tagbar
+[submodule "vim/pack/default/start/codi.vim"]
+	path = vim/pack/default/start/codi.vim
+	url = https://github.com/metakirby5/codi.vim
+[submodule "vim/pack/default/start/vim-devicons"]
+	path = vim/pack/default/start/vim-devicons
+	url = https://github.com/ryanoasis/vim-devicons
+[submodule "vim/pack/default/start/vim-python-pep8-indent"]
+	path = vim/pack/default/start/vim-python-pep8-indent
+	url = https://github.com/Vimjas/vim-python-pep8-indent
+[submodule "vim/pack/default/start/jedi-vim"]
+	path = vim/pack/default/start/jedi-vim
+	url = https://github.com/davidhalter/jedi-vim
+[submodule "vim/pack/default/start/SimpylFold"]
+	path = vim/pack/default/start/SimpylFold
+	url = https://github.com/tmhedberg/SimpylFold
+[submodule "vim/pack/default/start/ropevim"]
+	path = vim/pack/default/start/ropevim
+	url = https://github.com/python-rope/ropevim
+[submodule "vim/pack/default/start/seoul256"]
+	path = vim/pack/default/start/seoul256
+	url = https://github.com/junegunn/seoul256.vim.git
