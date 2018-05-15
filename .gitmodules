@@ -97,9 +97,6 @@
 [submodule "vim/pack/default/start/codi.vim"]
 	path = vim/pack/default/start/codi.vim
 	url = https://github.com/metakirby5/codi.vim
-[submodule "vim/pack/default/start/vim-devicons"]
-	path = vim/pack/default/start/vim-devicons
-	url = https://github.com/ryanoasis/vim-devicons
 [submodule "vim/pack/default/start/vim-python-pep8-indent"]
 	path = vim/pack/default/start/vim-python-pep8-indent
 	url = https://github.com/Vimjas/vim-python-pep8-indent
