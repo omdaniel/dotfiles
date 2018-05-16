@@ -233,7 +233,7 @@ set foldlevelstart=0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Highlight PEP8
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd FileType python setlocal colorcolumn=80
+" autocmd FileType python setlocal colorcolumn=80
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
