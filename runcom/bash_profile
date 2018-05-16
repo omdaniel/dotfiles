@@ -41,3 +41,7 @@ for DOTFILE in "$HOME"/dotfiles/system/{functions.sh,env.sh,alias.sh}; do
   [ -f "$DOTFILE" ] && . "$DOTFILE"
 
 done
+
+GIT_PROMPT_ONLY_IN_REPO=1
+source "$HOME"/dotfiles/bash-git-prompt/gitprompt.sh
+
