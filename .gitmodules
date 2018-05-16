@@ -112,3 +112,6 @@
 [submodule "vim/pack/default/start/seoul256"]
 	path = vim/pack/default/start/seoul256
 	url = https://github.com/junegunn/seoul256.vim.git
+[submodule "vim/pack/default/start/nord-vim"]
+	path = vim/pack/default/start/nord-vim
+	url = https://github.com/arcticicestudio/nord-vim.git
