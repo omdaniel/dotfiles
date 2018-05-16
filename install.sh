@@ -5,3 +5,4 @@ ln -sv "$HOME/dotfiles/vim/vimrc" ~/.vimrc
 ln -sv "$HOME/dotfiles/tmux.conf" ~/.tmux.conf
 
 [ ! -d "$HOME/.vim" ] && ln -sv "$HOME/dotfiles/vim"  ~/.vim
+[ ! -d "$HOME/.tmux" ] && ln -sv "$HOME/dotfiles/tmux"  ~/.tmux
